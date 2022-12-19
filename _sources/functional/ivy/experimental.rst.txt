@@ -33,6 +33,7 @@ Experimental
    experimental/nanmean.rst
    experimental/unravel_index.rst
    experimental/quantile.rst
+   experimental/nanquantile.rst
    experimental/diagflat.rst
    experimental/kron.rst
    experimental/matrix_exp.rst
