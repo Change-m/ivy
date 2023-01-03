@@ -699,3 +699,16 @@ class ArrayWithManipulation(abc.ABC):
         to this method with minimal changes.
         """
         return ivy.zero_pad(self._data, pad_width=pad_width, out=out)
+
+    def frombuffer(
+        self: ivy.Array,
+        /,
+        *,
+        dtype: Optional[Union[ivy.Array, ivy.NativeDtype]] = None,
+        count: Optional[Tuple[int]],
+        offset: Optional[Tuple[int]],
+        like: Optional[ivy.Array] = None,
+    ) -> ivy.Array:
+        return ivy.frombuffer(
+            self._data, count=count, offset=offset, like=like, dtype=dtype)
+    
