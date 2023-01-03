@@ -286,3 +286,12 @@ def hsplit(
 
 def broadcast_shapes(shapes: Union[List[int], List[Tuple]]) -> Tuple[int]:
     return jnp.broadcast_shapes(*shapes)
+
+
+def frombuffer(
+    buffer: JaxArray,
+    *,
+    dtype: Optional[jnp.dtype] = None,
+    out: Optional[JaxArray] = None,
+) -> JaxArray:
+    return jnp.frombuffer(buffer, dtype=dtype, out=out)
