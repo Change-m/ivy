@@ -2289,3 +2289,35 @@ class ContainerWithManipulationExperimental(ContainerBase):
 
         """
         return self.static_broadcast_shapes(self, out=out)
+
+    @staticmethod
+    def static_frombuffer(
+        buffer: Union[ivy.Array, ivy.NativeArray, ivy.Container],
+        dtype: Optional[Union[ivy.Dtype, ivy.NativeDtype]] = None,
+        /,
+        *,
+        key_chains: Optional[Union[List[str], Dict[str, str]]] = None,
+        to_apply: bool = True,
+        prune_unapplied: bool = False,
+        map_sequences: bool = False,
+        out: Optional[ivy.Container] = None,
+    ) -> ivy.Container:
+        return ContainerBase.cont_multi_map_in_function(
+            "frombuffer",
+            buffer,
+            key_chains=key_chains,
+            to_apply=to_apply,
+            prune_unapplied=prune_unapplied,
+            map_sequences=map_sequences,
+            out=out,
+        )
+    
+    def frombuffer(
+        self: ivy.Container,
+        dtype: Optional[Union[ivy.Dtype, ivy.NativeDtype]] = None,
+        /,
+        *,
+        out: Optional[ivy.Container] = None,
+    ) -> ivy.Container:
+        return self.static_frombuffer(self, out=out)
+    
