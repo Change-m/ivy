@@ -34,4 +34,5 @@ Manipulation
    manipulation/atleast_3d.rst
    manipulation/take_along_axis.rst
    manipulation/hsplit.rst
+   manipulation/broadcast_shapes.rst
 
